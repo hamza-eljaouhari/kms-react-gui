@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_ENDPOINT = 'https://localhost:7157/api/Cryptography';
+const API_ENDPOINT = 'https://localhost:32784/api/Cryptography';
 
 const fetchKeys = async () => {
     try {

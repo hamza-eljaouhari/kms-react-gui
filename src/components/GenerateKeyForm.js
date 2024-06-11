@@ -32,7 +32,6 @@ const GenerateKeyForm = ({ algorithms, onGenerateKey }) => {
     const possibleKeyLengths = {
         AES: [128, 192, 256],
         RSA: [1024, 2048, 3072, 4096],
-        // Add more algorithms and key lengths as needed
     };
         
     const [algorithm, setAlgorithm] = useState(algorithms[0]); // Default algorithm
