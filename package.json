@@ -1,7 +1,7 @@
 {
   "name": "kms-react-gui",
   "version": "0.1.0",
-  "homepage": " https://hamza-eljaouhari.github.io/healer",
+  "homepage": " https://hamza-eljaouhari.github.io/kms-react-gui",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
