@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_ENDPOINT = 'https://localhost:32784/api/Cryptography';
+const API_ENDPOINT = 'https://klms-net-core-71c8398607be.herokuapp.com/api/Cryptography';
 
 const fetchKeys = async () => {
     try {
