@@ -3,16 +3,19 @@ import React, { useState } from 'react';
 const styles = {
     container: {
         marginBottom: '1rem',
+        display: 'flex',
+        width: '100%',
+        flexDirection: 'column',
     },
     label: {
         display: 'block',
         marginBottom: '0.5rem',
     },
     select: {
-        padding: '0.25rem',
+        padding: '0.5rem',
+        marginBottom: '1rem',
         borderRadius: '4px',
         border: '1px solid #ccc',
-        marginRight: '0.25rem',
     },
     button: {
         padding: '0.5rem 1rem',
@@ -41,27 +44,28 @@ const GenerateKeyForm = ({ algorithms, onGenerateKey }) => {
     };
 
     return (
-        <div style={styles.container}>
-            <label style={styles.label}>Generate Key:</label>
-            <select value={algorithm} onChange={(e) => setAlgorithm(e.target.value)}>
-                {algorithms.map((algo) => (
-                    <option key={algo} value={algo}>
-                        {algo}
-                    </option>
-                ))}
-            </select>
-            {/* Render a select menu for key lengths based on the selected algorithm */}
-            <select value={keyLength} onChange={(e) => setKeyLength(Number(e.target.value))}>
-                {possibleKeyLengths[algorithm].map((length) => (
-                    <option key={length} value={length}>
-                        {length} bits
-                    </option>
-                ))}
-            </select>
-            <button style={styles.button} onClick={handleGenerateKey}>
-                Generate
-            </button>
-        </div>
+        <>
+            <label style={styles.label}><strong>Generate Key:</strong></label>
+            <div style={styles.container}>
+                <select style={styles.select} value={algorithm} onChange={(e) => setAlgorithm(e.target.value)}>
+                    {algorithms.map((algo) => (
+                        <option key={algo} value={algo}>
+                            {algo}
+                        </option>
+                    ))}
+                </select>
+                <select style={styles.select} value={keyLength} onChange={(e) => setKeyLength(Number(e.target.value))}>
+                    {possibleKeyLengths[algorithm].map((length) => (
+                        <option key={length} value={length}>
+                            {length} bits
+                        </option>
+                    ))}
+                </select>
+                <button style={styles.button} onClick={handleGenerateKey}>
+                    Generate
+                </button>
+            </div>
+        </>
     );
 };
 

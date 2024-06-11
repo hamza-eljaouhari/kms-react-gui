@@ -5,6 +5,26 @@ import EncryptDecryptForm from './EncryptDecryptForm';
 import KeyTable from './KeyTable';
 import GenerateKeyForm from './GenerateKeyForm'; // Import the new component
 
+
+const styles = {
+    container: {
+        width: '50%',
+        margin: '0 auto',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+    },
+    textAreasContainer: {
+        display: 'flex',
+        flexDirection: 'row',
+        width: '100%',
+        justifyContent: 'space-between'
+    },
+    keySelect: {
+        width: '100%'
+    }
+};
+
 const KeyManager = () => {
     const [keys, setKeys] = useState([]);
     const [selectedKey, setSelectedKey] = useState(null);
@@ -56,14 +76,15 @@ const KeyManager = () => {
     };
 
     return (
-        <div className="p-4">
-            {/* Include the GenerateKeyForm and pass supported algorithms */}
+        <div className="p-4" style={styles.container}>
             <GenerateKeyForm algorithms={['AES', 'RSA']} onGenerateKey={onGenerateKey} />
-            <KeySelect keys={keys} setSelectedKey={setSelectedKey} />
+            <KeySelect style={styles.keySelect} keys={keys} setSelectedKey={setSelectedKey} />
             <br />
-            <EncryptDecryptForm action="encrypt" data={encryptionData} setData={setEncryptionData} handleAction={() => onEncryptDecrypt('encrypt')} />
-            <br />
-            <EncryptDecryptForm action="decrypt" data={decryptionData} setData={setDecryptionData} handleAction={() => onEncryptDecrypt('decrypt')} />
+            <div style={styles.textAreasContainer}>
+                <EncryptDecryptForm style={styles.textArea} action="encrypt" data={encryptionData} setData={setEncryptionData} handleAction={() => onEncryptDecrypt('encrypt')} />
+                <br />
+                <EncryptDecryptForm style={styles.textArea} action="decrypt" data={decryptionData} setData={setDecryptionData} handleAction={() => onEncryptDecrypt('decrypt')} />
+            </div>
             <br />
             <KeyTable keys={keys} onLifecycleEvent={onLifecycleEvent} />
         </div>

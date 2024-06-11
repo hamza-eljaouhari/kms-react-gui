@@ -1,6 +1,21 @@
-# Getting Started with Create React App
+# Cryptographical Keys Lifecycle Management
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is designed to handle the lifecycle of cryptographic keys for both AES and RSA encryption. It includes functionalities for creating, activating, deactivating, archiving, recovering, revoking, and destroying keys. The project supports AES with key sizes of 128, 192, and 256 bits, and RSA with key sizes of 1024, 2048, 3072, and 4096 bits.
+
+## Features
+
+- **Key Creation**: Generate new AES and RSA keys.
+- **Key Activation**: Activate previously created keys.
+- **Key Deactivation**: Deactivate active keys without destroying them.
+- **Key Archiving**: Archive keys that are no longer in active use but need to be retained.
+- **Key Recovery**: Recover archived keys for reactivation.
+- **Key Revocation**: Revoke keys to ensure they can no longer be used.
+- **Key Destruction**: Permanently destroy keys.
+
+## Supported Key Sizes
+
+- **AES**: 128, 192, 256 bits
+- **RSA**: 1024, 2048, 3072, 4096 bits
 
 ## Available Scripts
 
@@ -14,12 +29,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
+### `npm build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -27,44 +37,55 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `npm test`
 
-### `npm run eject`
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### `npm eject`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc.) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point, you’re on your own.
 
-## Learn More
+## Getting Started
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Prerequisites
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Make sure you have [Node.js](https://nodejs.org/) installed.
 
-### Code Splitting
+### Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/your-repo.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd your-repo
+   ```
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
 
-### Analyzing the Bundle Size
+### Running the Project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To start the project, run:
+```bash
+npm start
+```
 
-### Making a Progressive Web App
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Contributions are welcome! Please read the [contributing guidelines](CONTRIBUTING.md) first.
 
-### Advanced Configuration
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+```
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to modify the content to better fit the specifics of your project and repository details.
+```

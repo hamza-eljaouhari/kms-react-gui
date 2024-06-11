@@ -2,7 +2,10 @@ import React from 'react';
 
 const styles = {
     container: {
-        marginBottom: '1rem',
+        width: '45%',
+        display: "flex",
+        flexDirection: "column",
+        alignItems: 'flex-start'
     },
     label: {
         display: 'block',
@@ -28,7 +31,7 @@ const styles = {
 
 const EncryptDecryptForm = ({ action, data, setData, handleAction }) => (
     <div style={styles.container}>
-        <label style={styles.label}>Data to {action === 'encrypt' ? 'Encrypt' : 'Decrypt'}:</label>
+        <label style={styles.label}><strong>Data to {action === 'encrypt' ? 'Encrypt' : 'Decrypt'}:</strong></label>
         <textarea
             style={styles.textarea}
             value={data}
